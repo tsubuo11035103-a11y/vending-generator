@@ -45,22 +45,18 @@ input[type="text"], input[type="password"], input[type="file"] {
   color: #777;
   margin: 6px 0 0;
 }
-.vending-color-picker {
-  display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  gap: 8px;
-}
 .vending-color-picker label {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  gap: 6px;
-  background: #edf0f2;
-  padding: 12px 8px;
-  border-radius: 10px;
-  cursor: pointer;
-  font-weight: 600;
-  margin: 0;
+  white-space: nowrap;
+  min-width: 0;
+}
+
+.vending-color-picker {
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+}
+
+.color-chip {
+  width: 16px;
+  height: 16px;
 }
 .premium-locked {
   opacity: 0.45;
