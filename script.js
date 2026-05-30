@@ -267,8 +267,8 @@ async function generateVendingMachine() {
     drawFitText(title, screen.x + 10, screen.y + 10, screen.w - 20, screen.h - 20);
 
     // 商品配置エリア。実画像に合わせて調整しやすいようにまとめる。
-    const startX = 238;
-    const rowYs = [352, 643, 930];
+    const startX = 230;
+    const rowYs = [345, 635, 930];
     const cellW = 108;
     const drawW = 82;
     const drawH = 170;
