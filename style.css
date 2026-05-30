@@ -18,10 +18,11 @@ body {
   box-sizing: border-box;
 }
 h1 {
-  font-size: 1.55rem;
+  font-size: clamp(1.25rem, 5vw, 1.55rem);
   text-align: center;
   margin: 10px 0 24px;
   color: #222;
+  white-space: nowrap;
 }
 .control-group { margin-bottom: 20px; }
 label {
