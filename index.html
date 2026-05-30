@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>オリジナル自販機メーカー</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <main class="container">
+    <h1>🥤 オリジナル自販機メーカー</h1>
+
+    <section class="control-group">
+      <label>1. 自販機カラーを選ぶ</label>
+      <div class="vending-color-picker">
+        <label><input type="radio" name="vending-color" value="red" checked> 赤</label>
+        <label><input type="radio" name="vending-color" value="white"> 白</label>
+        <label class="premium-locked"><input type="radio" name="vending-color" value="blue" disabled> 青 🔒</label>
+      </div>
+    </section>
+
+    <section class="control-group">
+      <label for="machine-name">2. 自販機名</label>
+      <input id="machine-name" type="text" maxlength="18" placeholder="例：つぶお補給所" />
+      <p class="hint">液晶部分に表示されます。空欄でもOK。</p>
+    </section>
+
+    <section class="control-group premium-section">
+      <label>3. 液晶画像（任意） 🔒</label>
+      <input id="screen-image" type="file" accept="image/*" disabled />
+      <p class="hint">有料版では好きな画像＋自販機名を液晶部分に表示できます。</p>
+    </section>
+
+    <section class="control-group secret-box">
+      <div class="secret-preview">
+        <img src="assets/drinks/black.png" alt="SECRET" />
+        <span>でたらラッキー✨</span>
+      </div>
+    </section>
+
+    <section class="control-group note-unlock-section">
+      <label for="note-password">🔑 note有料版の合言葉</label>
+      <input id="note-password" type="password" placeholder="有料記事にある秘密の暗号を入力" />
+      <button id="btn-unlock" class="btn btn-primary">🔓 有料版を解放する</button>
+      <p id="license-message" class="license-message"></p>
+      <p class="note-link-p">青自販機・液晶画像・追加ドリンク・透かしなしを解放👉</p>
+    </section>
+
+    <section class="limit-counter-box">
+      <div>今日の残り → 生成: <span id="count-generate">20</span>回 / 保存: <span id="count-download">3</span>回</div>
+      <div id="premium-badge" style="display:none;">✨ 有料版ロック解除中 ✨</div>
+    </section>
+
+    <button id="btn-generate" class="btn btn-primary">🥤 自販機を生成する</button>
+    <button id="btn-download" class="btn btn-download" disabled>📥 画像をダウンロード</button>
+
+    <section class="preview-area">
+      <p>【プレビュー】</p>
+      <canvas id="result-canvas"></canvas>
+    </section>
+
+    <footer class="footer">🥤 オリジナル自販機メーカー by tsubuo</footer>
+  </main>
+
+  <script src="script.js"></script>
+</body>
+</html>
