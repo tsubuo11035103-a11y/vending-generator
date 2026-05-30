@@ -266,7 +266,7 @@ async function generateVendingMachine() {
     ctx.restore();
 
     const title = machineNameInput.value.trim();
-    drawFitText(title, screen.x + 10, screen.y - 190, screen.w - 20, screen.h - 20);
+    drawFitText(title, screen.x + 10, screen.y - 180, screen.w - 20, screen.h - 20);
 
     // 商品配置エリア。実画像に合わせて調整しやすいようにまとめる。
     const startX = 220;
