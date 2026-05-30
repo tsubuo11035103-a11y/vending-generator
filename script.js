@@ -268,7 +268,7 @@ async function generateVendingMachine() {
 
     // 商品配置エリア。実画像に合わせて調整しやすいようにまとめる。
     const startX = 220;
-    const rowYs = [365, 655, 920];
+    const rowYs = [365, 658, 905];
     const cellW = 108;
     const drawW = 82;
     const drawH = 170;
