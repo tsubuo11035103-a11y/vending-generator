@@ -193,7 +193,7 @@ function chooseGroupedItems(pool, count) {
   let i = 0;
   while (result.length < count) {
     const item = shuffled[i % shuffled.length];
-    const groupSize = Math.min(count - result.length, 1 + Math.floor(Math.random() * 3));
+    const groupSize = Math.min(count - result.length, 1 + Math.floor(Math.random() * 2));
     for (let j = 0; j < groupSize; j++) result.push(item);
     i++;
   }
