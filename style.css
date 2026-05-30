@@ -213,3 +213,9 @@ canvas {
 .color-blue {
   background: #5dade2;
 }
+.secret-result {
+  margin-top: 10px;
+  font-weight: 800;
+  color: #ff9500;
+  text-align: center;
+}
