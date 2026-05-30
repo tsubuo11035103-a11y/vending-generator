@@ -255,7 +255,7 @@ async function generateVendingMachine() {
     ctx.drawImage(vendingImg, 0, 0, 1200, 1800);
 
     // 液晶エリア。必要ならここを実画像に合わせて微調整。
-    const screen = { x: 115, y: 1010, w: 500, h: 350 };
+    const screen = { x: 112, y: 1000, w: 500, h: 320 };
     drawImageCover(screenImg, screen.x, screen.y, screen.w, screen.h, 32);
     ctx.save();
     ctx.fillStyle = 'rgba(255,255,255,0.18)';
