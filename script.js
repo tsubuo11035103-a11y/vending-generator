@@ -241,6 +241,7 @@ async function generateVendingMachine() {
       secretIndex = Math.floor(Math.random() * layout.length);
       layout[secretIndex] = chooseSecret();
     }
+    secretResult.textContent = hasSecret ? '👑 SECRETが出ました！' : '';
 
     const drinkImages = await Promise.all(layout.map(src => loadImage(src)));
 
