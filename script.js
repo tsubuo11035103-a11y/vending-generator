@@ -286,20 +286,6 @@ async function generateVendingMachine() {
       ctx.restore();
     });
 
-    if (hasSecret) {
-      ctx.save();
-      ctx.font = 'bold 46px sans-serif';
-      ctx.textAlign = 'center';
-      ctx.textBaseline = 'middle';
-      ctx.fillStyle = 'rgba(255,255,255,0.95)';
-      ctx.strokeStyle = 'rgba(0,0,0,0.35)';
-      ctx.lineWidth = 6;
-      const text = '👑 SECRET';
-      ctx.strokeText(text, 930, 1425);
-      ctx.fillText(text, 930, 1425);
-      ctx.restore();
-    }
-
     if (!premium) {
       ctx.save();
       ctx.font = 'bold 28px sans-serif';
