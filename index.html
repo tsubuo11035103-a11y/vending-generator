@@ -12,11 +12,25 @@
 
     <section class="control-group">
       <label>1. 自販機カラーを選ぶ</label>
-      <div class="vending-color-picker">
-        <label><input type="radio" name="vending-color" value="red" checked> 赤</label>
-        <label><input type="radio" name="vending-color" value="white"> 白</label>
-        <label class="premium-locked"><input type="radio" name="vending-color" value="blue" disabled> 青 🔒</label>
-      </div>
+<div class="vending-color-picker">
+  <label>
+    <input type="radio" name="vending-color" value="red" checked>
+    <span class="color-chip color-red"></span>
+    赤
+  </label>
+
+  <label>
+    <input type="radio" name="vending-color" value="white">
+    <span class="color-chip color-white"></span>
+    白
+  </label>
+
+  <label class="premium-locked">
+    <input type="radio" name="vending-color" value="blue" disabled>
+    <span class="color-chip color-blue"></span>
+    青 🔒
+  </label>
+</div>
     </section>
 
     <section class="control-group">
