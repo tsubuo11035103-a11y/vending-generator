@@ -11,6 +11,7 @@ const licenseMessage = document.getElementById('license-message');
 const countGenText = document.getElementById('count-generate');
 const countDlText = document.getElementById('count-download');
 const premiumBadge = document.getElementById('premium-badge');
+const secretResult = document.getElementById('secret-result');
 
 // ===== 有料版状態 =====
 let premiumUnlocked = localStorage.getItem('vending_premium_unlocked') === 'true';
