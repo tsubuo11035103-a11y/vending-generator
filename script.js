@@ -255,7 +255,7 @@ async function generateVendingMachine() {
     ctx.drawImage(vendingImg, 0, 0, 1200, 1800);
 
     // 液晶エリア。必要ならここを実画像に合わせて微調整。
-    const screen = { x: 110, y: 1030, w: 495, h: 320 };
+    const screen = { x: 115, y: 1035, w: 490, h: 315 };
     drawImageCover(screenImg, screen.x, screen.y, screen.w, screen.h, 32);
     ctx.save();
     ctx.fillStyle = 'rgba(255,255,255,0.18)';
@@ -264,7 +264,7 @@ async function generateVendingMachine() {
     ctx.restore();
 
     const title = machineNameInput.value.trim();
-    drawFitText(title, screen.x + 10, screen.y + 10, screen.w - 20, screen.h - 20);
+    drawFitText(title, screen.x + 10, screen.y + 40, screen.w - 20, screen.h - 20);
 
     // 商品配置エリア。実画像に合わせて調整しやすいようにまとめる。
     const startX = 230;
