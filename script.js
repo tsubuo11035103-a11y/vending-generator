@@ -104,7 +104,7 @@ function range(start, end) {
 }
 
 const DRINKS = {
-  freeBottles: range(1, 10),
+  freeBottles: range(1, 11),
   freeCans: range(101, 124),
   premiumBottles: range(201, 205),
   premiumCans: range(301, 304),
