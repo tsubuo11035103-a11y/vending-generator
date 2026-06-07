@@ -284,7 +284,10 @@ async function generateVendingMachine() {
     const cellW = 108;
     function getDrinkSize(src) {
   const fileName = src.split('/').pop();
-  const num = parseInt(fileName, 10);
+  const num = parseInt(
+  fileName.replace('.png', ''),
+  10
+);
 
   // ペットボトル
   if ((num >= 1 && num <= 99) || (num >= 201 && num <= 299)) {
@@ -305,17 +308,30 @@ async function generateVendingMachine() {
 }
 
     drinkImages.forEach((img, i) => {
-      const row = Math.floor(i / 7);
-      const col = i % 7;
-      const x = startX + col * cellW + (cellW - drawW) / 2;
-      const y = rowYs[row] - drawH;
-      ctx.save();
-      ctx.shadowColor = 'rgba(0,0,0,0.18)';
-      ctx.shadowBlur = 8;
-      ctx.shadowOffsetY = 3;
-      ctx.drawImage(img, x, y, drawW, drawH);
-      ctx.restore();
-    });
+  const row = Math.floor(i / 7);
+  const col = i % 7;
+
+  const src = layout[i];
+  const size = getDrinkSize(src);
+
+  const x = startX + col * cellW + (cellW - size.w) / 2;
+  const y = rowYs[row] - size.h;
+
+  ctx.save();
+  ctx.shadowColor = 'rgba(0,0,0,0.18)';
+  ctx.shadowBlur = 8;
+  ctx.shadowOffsetY = 3;
+
+  ctx.drawImage(
+    img,
+    x,
+    y,
+    size.w,
+    size.h
+  );
+
+  ctx.restore();
+});
 
     if (!premium) {
       ctx.save();
