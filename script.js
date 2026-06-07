@@ -191,12 +191,20 @@ function chooseGroupedItems(pool, count) {
   const result = [];
   const shuffled = [...pool].sort(() => Math.random() - 0.5);
   let i = 0;
+
   while (result.length < count) {
     const item = shuffled[i % shuffled.length];
-    const groupSize = Math.min(count - result.length, 1 + Math.floor(Math.random() * 2));
+
+    // 1本率アップ：80%で1本、20%で2本
+    const groupSize =
+      Math.random() < 0.8
+        ? 1
+        : Math.min(2, count - result.length);
+
     for (let j = 0; j < groupSize; j++) result.push(item);
     i++;
   }
+
   return result;
 }
 
