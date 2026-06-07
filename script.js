@@ -282,8 +282,27 @@ async function generateVendingMachine() {
     const startX = 220;
     const rowYs = [365, 658, 905];
     const cellW = 108;
-    const drawW = 82;
-    const drawH = 170;
+    function getDrinkSize(src) {
+  const fileName = src.split('/').pop();
+  const num = parseInt(fileName, 10);
+
+  // ペットボトル
+  if ((num >= 1 && num <= 99) || (num >= 201 && num <= 299)) {
+    return { w: 88, h: 185 };
+  }
+
+  // 缶
+  if ((num >= 101 && num <= 199) || (num >= 301 && num <= 399)) {
+    return { w: 82, h: 170 };
+  }
+
+  // シークレット
+  if (num >= 901) {
+    return { w: 95, h: 190 };
+  }
+
+  return { w: 82, h: 170 };
+}
 
     drinkImages.forEach((img, i) => {
       const row = Math.floor(i / 7);
